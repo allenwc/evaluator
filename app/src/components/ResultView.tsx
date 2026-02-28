@@ -14,6 +14,7 @@ interface Props {
 
 export default function ResultView({ score, levelLabel, mainDimensions, subDimensions, onReset }: Props) {
   const [showTypeCard, setShowTypeCard] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
 
   return (
     <div className="result-view">
@@ -60,9 +61,25 @@ export default function ResultView({ score, levelLabel, mainDimensions, subDimen
         查看我的熵型
       </button>
 
-      <button className="reset-btn" onClick={onReset} type="button">
+      <button className="reset-btn" onClick={() => setConfirmReset(true)} type="button">
         重新评估
       </button>
+
+      {confirmReset && (
+        <div className="confirm-overlay" onClick={() => setConfirmReset(false)}>
+          <div className="confirm-dialog" onClick={e => e.stopPropagation()}>
+            <p className="confirm-text">答题记录将被清空，确定重新评估吗？</p>
+            <div className="confirm-actions">
+              <button className="confirm-cancel" onClick={() => setConfirmReset(false)} type="button">
+                再想想
+              </button>
+              <button className="confirm-ok" onClick={onReset} type="button">
+                确认重置
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showTypeCard && (
         <EntropyTypeCard
