@@ -17,6 +17,37 @@ export const ENTROPY_LEVELS: Record<'LOW' | 'MEDIUM' | 'HIGH', EntropyLevel> = {
   HIGH:   { min: 128, max: 160, label: '高熵段' },
 };
 
+// 主维度：题号分组（共16题，满分80，阈值40）
+export const MAIN_DIMENSIONS = {
+  closure: {
+    label: '封闭程度',
+    ids: [1,2,3,4,5,6,7,8,17,18,19,20,21,22,23,24],
+    threshold: 40,
+    belowLabel: '成长型',
+    aboveLabel: '固化型',
+    belowDesc: '思维倾向',
+    aboveDesc: '思维倾向',
+  },
+  resistance: {
+    label: '做功阻力',
+    ids: [9,10,11,12,13,14,15,16,25,26,27,28,29,30,31,32],
+    threshold: 40,
+    belowLabel: '增效型',
+    aboveLabel: '内耗型',
+    belowDesc: '做功倾向',
+    aboveDesc: '做功倾向',
+  },
+} as const;
+
+// 子维度：题号分组（得分之和 ÷ 题数，结果 1-5 分）
+export const SUB_DIMENSIONS = [
+  { key: 'closure',     label: '封闭性', ids: [1,2,3,4,17,18,19,20] },
+  { key: 'balance',     label: '平衡态', ids: [5,6,21,22] },
+  { key: 'linearity',   label: '高线性', ids: [7,8,23,24] },
+  { key: 'innerChaos',  label: '内心失序', ids: [9,10,11,12,25,26,27,28] },
+  { key: 'energyLoss',  label: '能量失焦', ids: [13,14,15,16,29,30,31,32] },
+] as const;
+
 export const questions: Question[] = [
   { id:  1, text: '我感到每天都在朝自己的目标迈进',                                       scores: [5, 4, 3, 2, 1] },
   { id:  2, text: '有麻烦的时候，我通常能想到一些应付的方法',                             scores: [5, 4, 3, 2, 1] },

@@ -51,6 +51,83 @@
   margin: 0 0 40px;
 }
 
+.section {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.section-desc {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0 0 16px;
+}
+
+.main-dimensions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.main-dim-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.main-dim-label {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.main-dim-score {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.main-dim-unit {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+  margin-left: 2px;
+}
+
+.main-dim-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #eef3ff;
+  color: #4f86f7;
+  margin-bottom: 6px;
+}
+
+.main-dim-hint {
+  font-size: 11px;
+  color: #ccc;
+}
+
+.pentagon-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 .reset-btn {
   padding: 12px 40px;
   border: 1.5px solid #4f86f7;

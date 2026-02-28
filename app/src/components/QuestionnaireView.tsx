@@ -1,13 +1,18 @@
 import { useState } from 'react';
 import { questions } from '../data/questions';
-import { calculateScore, getEntropyLevel } from '../utils/scoring';
+import { calculateScore, getEntropyLevel, calculateMainDimensions, calculateSubDimensions } from '../utils/scoring';
 import QuestionItem from './QuestionItem';
 import ResultView from './ResultView';
 import './QuestionnaireView.css';
 
 export default function QuestionnaireView() {
   const [answers, setAnswers] = useState<Record<number, number>>({});
-  const [result, setResult] = useState<{ score: number; levelLabel: string } | null>(null);
+  const [result, setResult] = useState<{
+    score: number;
+    levelLabel: string;
+    mainDimensions: ReturnType<typeof calculateMainDimensions>;
+    subDimensions: ReturnType<typeof calculateSubDimensions>;
+  } | null>(null);
 
   const answeredCount = Object.keys(answers).length;
   const allAnswered = answeredCount === questions.length;
@@ -19,7 +24,9 @@ export default function QuestionnaireView() {
   function handleSubmit() {
     const score = calculateScore(answers);
     const levelLabel = getEntropyLevel(score);
-    setResult({ score, levelLabel });
+    const mainDimensions = calculateMainDimensions(answers);
+    const subDimensions = calculateSubDimensions(answers);
+    setResult({ score, levelLabel, mainDimensions, subDimensions });
   }
 
   function handleReset() {
@@ -32,6 +39,8 @@ export default function QuestionnaireView() {
       <ResultView
         score={result.score}
         levelLabel={result.levelLabel}
+        mainDimensions={result.mainDimensions}
+        subDimensions={result.subDimensions}
         onReset={handleReset}
       />
     );
