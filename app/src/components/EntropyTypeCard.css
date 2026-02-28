@@ -1,0 +1,127 @@
+/* 遮罩层 */
+.entropy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  animation: overlayIn 0.25s ease;
+}
+
+.entropy-overlay.closing {
+  animation: overlayOut 0.3s ease forwards;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes overlayOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* 卡片 */
+.entropy-card {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 28px 28px 0 0;
+  padding: 36px 28px 48px;
+  text-align: center;
+  position: relative;
+  animation: cardUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.entropy-card.closing {
+  animation: cardDown 0.3s ease forwards;
+}
+
+@keyframes cardUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes cardDown {
+  from { transform: translateY(0);    opacity: 1; }
+  to   { transform: translateY(100%); opacity: 0; }
+}
+
+/* 关闭按钮 */
+.entropy-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: rgba(0,0,0,0.08);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.entropy-close:hover {
+  background: rgba(0,0,0,0.15);
+}
+
+/* Emoji */
+.entropy-emoji {
+  font-size: 72px;
+  line-height: 1;
+  margin-bottom: 16px;
+  animation: emojiPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+@keyframes emojiPop {
+  from { transform: scale(0.4) rotate(-10deg); opacity: 0; }
+  to   { transform: scale(1)   rotate(0deg);   opacity: 1; }
+}
+
+/* 熵型名称 */
+.entropy-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  animation: fadeSlideIn 0.4s ease 0.3s both;
+}
+
+/* 标签 */
+.entropy-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 0.4s ease 0.38s both;
+}
+
+.entropy-tag {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1.5px solid;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.6);
+}
+
+/* 描述文字 */
+.entropy-desc {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+  animation: fadeSlideIn 0.4s ease 0.46s both;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

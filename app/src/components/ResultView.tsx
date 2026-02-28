@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import type { MainDimensionResult, SubDimensionResult } from '../utils/scoring';
 import PentagonChart from './PentagonChart';
+import EntropyTypeCard from './EntropyTypeCard';
 import './ResultView.css';
 
 interface Props {
@@ -11,6 +13,8 @@ interface Props {
 }
 
 export default function ResultView({ score, levelLabel, mainDimensions, subDimensions, onReset }: Props) {
+  const [showTypeCard, setShowTypeCard] = useState(false);
+
   return (
     <div className="result-view">
       <h1 className="result-title">评估结果</h1>
@@ -47,9 +51,25 @@ export default function ResultView({ score, levelLabel, mainDimensions, subDimen
         </div>
       </div>
 
+      {/* 查看熵型 */}
+      <button
+        className="type-btn"
+        onClick={() => setShowTypeCard(true)}
+        type="button"
+      >
+        查看我的熵型
+      </button>
+
       <button className="reset-btn" onClick={onReset} type="button">
         重新评估
       </button>
+
+      {showTypeCard && (
+        <EntropyTypeCard
+          mainDimensions={mainDimensions}
+          onClose={() => setShowTypeCard(false)}
+        />
+      )}
     </div>
   );
 }

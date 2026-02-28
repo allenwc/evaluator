@@ -128,6 +128,25 @@
   justify-content: center;
 }
 
+.type-btn {
+  padding: 14px 48px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #4f86f7, #34c98a);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(79, 134, 247, 0.3);
+}
+
+.type-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
 .reset-btn {
   padding: 12px 40px;
   border: 1.5px solid #4f86f7;
