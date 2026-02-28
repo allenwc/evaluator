@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(node -e:*)",
+      "Bash(npx tsc:*)",
+      "Bash(openspec status:*)",
+      "Bash(openspec list:*)",
+      "Bash(openspec instructions apply:*)",
+      "Bash(openspec archive change:*)",
+      "Bash(openspec archive:*)",
+      "Bash(gh auth:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(vercel --version:*)"
+    ]
+  }
+}
