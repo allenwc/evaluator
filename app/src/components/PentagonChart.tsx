@@ -4,12 +4,12 @@ interface Props {
   dimensions: SubDimensionResult[];
 }
 
-const W = 340;
-const H = 300;
-const CX = 170;
-const CY = 155;
-const MAX_R = 100;
-const LABEL_R = MAX_R + 32;
+const W = 300;
+const H = 250;
+const CX = 150;
+const CY = 130;
+const MAX_R = 82;
+const LABEL_R = MAX_R + 28;
 const LEVELS = 5;
 
 // 顶点顺序（顺时针从顶部）：封闭性、高线性、能量失焦、内心失序、平衡态
@@ -108,7 +108,7 @@ export default function PentagonChart({ dimensions }: Props) {
               x={p.x}
               y={nameY}
               textAnchor={anchor}
-              fontSize="12"
+              fontSize="11"
               fill="#555"
             >
               {d?.label}
@@ -117,7 +117,7 @@ export default function PentagonChart({ dimensions }: Props) {
               x={p.x}
               y={scoreY}
               textAnchor={anchor}
-              fontSize="12"
+              fontSize="11"
               fontWeight="600"
               fill="#4f86f7"
             >

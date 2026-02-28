@@ -3,15 +3,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 24px;
+  justify-content: flex-start;
+  padding: 24px 20px 40px;
   text-align: center;
 }
 
 .result-title {
-  font-size: 20px;
+  font-size: 16px;
   color: #888;
-  margin: 0 0 32px;
+  margin: 0 0 14px;
   font-weight: 400;
 }
 
@@ -19,61 +19,61 @@
   display: flex;
   align-items: baseline;
   gap: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .score-number {
-  font-size: 80px;
+  font-size: 56px;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1;
 }
 
 .score-unit {
-  font-size: 24px;
+  font-size: 20px;
   color: #555;
 }
 
 .level-badge {
   display: inline-block;
-  padding: 8px 28px;
+  padding: 6px 20px;
   border-radius: 24px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   background: #eef3ff;
   color: #4f86f7;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .score-range {
-  font-size: 13px;
+  font-size: 12px;
   color: #bbb;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
 }
 
 .section {
   width: 100%;
   max-width: 480px;
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   text-align: center;
 }
 
 .section-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #1a1a1a;
   margin: 0 0 8px;
 }
 
 .section-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: #aaa;
-  margin: 0 0 16px;
+  margin: 0 0 6px;
 }
 
 .main-dimensions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
 }
 
@@ -81,27 +81,27 @@
   flex: 1;
   background: #fff;
   border-radius: 12px;
-  padding: 16px 12px;
+  padding: 12px 10px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
   text-align: center;
 }
 
 .main-dim-label {
-  font-size: 13px;
+  font-size: 12px;
   color: #888;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .main-dim-score {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .main-dim-unit {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: #888;
   margin-left: 2px;
@@ -109,17 +109,17 @@
 
 .main-dim-badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   background: #eef3ff;
   color: #4f86f7;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .main-dim-hint {
-  font-size: 11px;
+  font-size: 10px;
   color: #ccc;
 }
 
@@ -129,18 +129,18 @@
 }
 
 .type-btn {
-  padding: 14px 48px;
+  padding: 11px 0;
   border: none;
   border-radius: 24px;
   background: linear-gradient(135deg, #4f86f7, #34c98a);
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   width: 200px;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 16px rgba(79, 134, 247, 0.3);
+  box-shadow: 0 4px 16px rgba(79, 134, 247, 0.25);
 }
 
 .type-btn:hover {
@@ -149,17 +149,17 @@
 }
 
 .reset-btn {
-  padding: 14px 48px;
+  padding: 11px 0;
   border: none;
   border-radius: 24px;
   background: linear-gradient(135deg, #f76f6f, #f7a94f);
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   width: 200px;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 16px rgba(247, 111, 111, 0.3);
+  box-shadow: 0 4px 16px rgba(247, 111, 111, 0.25);
 }
 
 .reset-btn:hover {
