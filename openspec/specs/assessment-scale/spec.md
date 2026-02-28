@@ -1,0 +1,38 @@
+# assessment-scale Specification
+
+## Purpose
+TBD - created by archiving change entropy-assessment-tool. Update Purpose after archive.
+## Requirements
+### Requirement: 展示 32 道评估题目
+系统 SHALL 在量表页面按序展示全部 32 道题目，每题包含题目文本和 5 个选项。
+
+#### Scenario: 页面加载时展示所有题目
+- **WHEN** 用户进入量表页面
+- **THEN** 页面显示全部 32 道题目，顺序与数据文件中的 id 一致
+
+#### Scenario: 每题显示 5 个选项
+- **WHEN** 用户查看任意一道题目
+- **THEN** 该题显示"完全不符 / 不太符合 / 一般 / 比较符合 / 完全符合"5 个选项，且只能单选
+
+### Requirement: 记录用户每题的选择
+系统 SHALL 记录用户对每道题目所选的选项，同一题重新选择时覆盖之前的记录。
+
+#### Scenario: 用户选择选项
+- **WHEN** 用户点击某题的某个选项
+- **THEN** 该题的选中状态更新为该选项，视觉上高亮显示已选项
+
+#### Scenario: 用户更改选项
+- **WHEN** 用户对已作答的题目重新点击另一个选项
+- **THEN** 之前的选中状态取消，新选项被记录
+
+### Requirement: 全部作答后方可提交
+系统 SHALL 仅在用户完成全部 32 道题作答后，激活提交按钮。
+
+#### Scenario: 未全部作答时提交按钮不可用
+- **WHEN** 用户尚有题目未作答
+- **THEN** 提交按钮处于禁用状态，无法点击
+
+#### Scenario: 全部作答后提交按钮激活
+- **WHEN** 用户完成全部 32 道题的作答
+- **THEN** 提交按钮变为可点击状态
+

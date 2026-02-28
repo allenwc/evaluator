@@ -1,0 +1,63 @@
+.questionnaire-view {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 120px;
+}
+
+.questionnaire-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.questionnaire-header h1 {
+  font-size: 24px;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.progress-text {
+  color: #888;
+  font-size: 14px;
+  margin: 0;
+}
+
+.question-list {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 24px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.submit-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn {
+  padding: 12px 48px;
+  border: none;
+  border-radius: 24px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #4f86f7;
+  color: #fff;
+}
+
+.submit-btn:disabled {
+  background: #d9d9d9;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  background: #3a6fd8;
+}
